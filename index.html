@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form and It's Validaiton</title>
+
+    <style>
+
+        .Container{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+        }
+
+        form{
+
+            margin-bottom: 1rem;
+        }
+
+        h3{
+
+            position: relative;
+            right: 15rem;
+            font-size: 2rem;
+            margin-top: 1rem;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="Container">
+
+
+        <form>
+
+        <input type="text" id="input1">
+        <input type="text" id="input2">
+        <button id="submitBtn">Submit</button>
+        <br> <br> <br> <br>
+
+    </form>
+
+    <br> <br>
+
+    <h3>Hello There</h3>
+    </div>
+    
+
+    <script>
+
+const form=document.querySelector('form');
+const submitBtn=document.getElementById('submitBtn');
+
+
+
+submitBtn.addEventListener('click',function(){
+
+const inputs=document.querySelectorAll('input')
+
+
+for(let i=0; i<inputs.length; i++){
+
+    if(inputs[i].value==''){
+        document.querySelector('h3').innerHTML='Error: Blank Iinputs'
+                document.querySelector('h3').style.color='red';
+                break;
+
+    } else{
+        document.querySelector('h3').innerHTML=''
+        document.querySelector('h3').style.color='black';
+
+    }
+}
+
+})
+
+
+// submitBtn.addEventListener('click',function(){
+
+//     const input1=document.getElementById('input1').value;
+// const input2=document.getElementById('input2').value;
+
+//     if(input1, input2==''){
+
+//         document.querySelector('h3').innerHTML='Error: Blank Iinputs'
+//         document.querySelector('h3').style.color='red';
+
+
+//     }
+//     else{
+//         document.querySelector('h3').innerHTML=''
+//         document.querySelector('h3').style.color='black';
+
+//     }
+
+// })
+
+
+form.addEventListener('submit',function(ev){
+
+    ev.preventDefault()
+    
+})
+
+
+
+    </script>
+</body>
+</html>
